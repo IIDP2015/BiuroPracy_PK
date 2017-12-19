@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="BiuroPracy.Domain" assembly="BiuroPracy.Domain" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Employee" table="Employee">
+    <id name="Id" column="Id" type="Int32">
+      <generator class="native" />
+    </id>
+  
+    
+    <property name="Email" type="String" column="Email" length="255" />
+    <property name="Password" type="String" column="Password" length="255" />
+    <property name="Name" type="String" column="Name" length="255" />
+    <property name="Surname" type="String" column="Surname" length="255" />
+    <property name="DateOfBirth" not-null ="false" type="System.DateTime" column="DateOfBirth" length="255" />
+    
+    <many-to-one
+      name="Contract"
+      class="BiuroPracy.Domain.Contract"
+      column="ContractId"
+      fetch ="select"
+      lazy="false"
+      cascade="none"
+      />
+
+    <many-to-one
+    name="Proffesion"
+    class="BiuroPracy.Domain.Proffesion"
+    column="ProffesionId"
+    fetch ="select"
+    lazy="false"
+    cascade="none"
+      />
+    
+  </class>
+</hibernate-mapping>
