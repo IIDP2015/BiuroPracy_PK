@@ -9,6 +9,6 @@ namespace BiuroPracy.Domain
     public class City
     {
         public virtual int Id { get; set; }
-        public virtual string CityName { get; set; }
+        public virtual string Name { get; set; }
     }
 }

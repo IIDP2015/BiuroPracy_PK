@@ -29,6 +29,14 @@
     lazy="false"
     cascade="none"
       />
+
+    <many-to-one
+      name="Location"
+      class="BiuroPracy.Domain.Location"
+      column="LocationId"
+      lazy="false"
+      cascade="all"
+    />
     
   </class>
 </hibernate-mapping>
