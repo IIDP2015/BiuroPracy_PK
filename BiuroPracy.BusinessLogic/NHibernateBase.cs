@@ -22,10 +22,10 @@ namespace BiuroPracy.BusinessLogic.NHibernate
         protected static ISessionFactory SessionFactory { get; set; }
 
 
-        public static ISession Session => session ?? (session = SessionFactory.OpenSession());
+        public static ISession Session => (session = SessionFactory.OpenSession());
 
 
-        public static IStatelessSession StatelessSession => statelessSession ?? (statelessSession = SessionFactory.OpenStatelessSession());
+        public static IStatelessSession StatelessSession => (statelessSession = SessionFactory.OpenStatelessSession());
 
 
         private static Configuration ConfigureRHibernate()

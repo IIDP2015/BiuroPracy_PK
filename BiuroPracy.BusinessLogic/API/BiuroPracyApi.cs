@@ -25,8 +25,9 @@ namespace BiuroPracy.BusinessLogic.API.Interface
                         try
                         {
                             var proffesion = session.Get<Proffesion>(1);
-                        
-                            var id = AddEmployee(session);
+
+                            //                            var id = AddEmployee(session);
+                            UpdateEmployee(session);
                             //GetEmployee(session);
                             transaction.Commit();
                         }
@@ -73,6 +74,24 @@ namespace BiuroPracy.BusinessLogic.API.Interface
                 }
             };
             return (int)session.Save(employee);
+        }
+
+        private void UpdateEmployee(ISession session)
+        {
+            var employee = session.Get<Employee>(19);
+
+            employee.Name = "Arnold";
+            employee.Surname = "Boczek";
+
+            employee.Location = new Location()
+            {
+                City = new City() { Id = 7},
+                Country = new Country() { Id = 5},
+                PostalCode = "39-308",
+                Street = "Piłsudskiego 4/6"
+            };
+            
+            session.Update(employee);
         }
     }
 }
