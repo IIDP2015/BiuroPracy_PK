@@ -57,11 +57,11 @@ namespace BiuroPracy.BusinessLogic.API.Interface
         {
             var employee = new Employee()
             {
-                Email = "szaskalski@gmail.com",
-                DateOfBirth = DateTime.Now.AddYears(-20),
+                Email = "test@gmail.com",
+                DateOfBirth = DateTime.Now.AddYears(-25),
                 Password = "54632",
-                Contract = new Contract() { Id = 2},
-                Proffesion = new Proffesion() { Id = 2},
+                Contract = new Contract() { Id = 3},
+                Proffesion = new Proffesion() { Id = 3},
                 Name = "Szczpan",
                 Surname = "Zaskalski",
                 Location = new Location()
