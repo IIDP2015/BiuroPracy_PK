@@ -45,7 +45,7 @@
     <Compile Include="Domain\Country.cs" />
     <Compile Include="Domain\Employee.cs" />
     <Compile Include="Domain\Location.cs" />
-    <Compile Include="Domain\Profession.cs" />
+    <Compile Include="Domain\Proffesion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -54,7 +54,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Contract.hbm.xml" />
     <EmbeddedResource Include="Employee.hbm.xml" />
-    <EmbeddedResource Include="Proffesion.hbm.xml" />
+    <EmbeddedResource Include="Profession.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -24,7 +24,7 @@ namespace BiuroPracy.BusinessLogic.API.Interface
                     {
                         try
                         {
-                            var proffesion = session.Get<Profession>(1);
+                            var proffesion = session.Get<Proffesion>(1);
                         
                             var id = AddEmployee(session);
                             //GetEmployee(session);
@@ -61,7 +61,7 @@ namespace BiuroPracy.BusinessLogic.API.Interface
                 DateOfBirth = DateTime.Now.AddYears(-20),
                 Password = "54632",
                 Contract = new Contract() { Id = 2},
-                Profession = new Profession() { Id = 2},
+                Proffesion = new Proffesion() { Id = 2},
                 Name = "Szczpan",
                 Surname = "Zaskalski",
                 Location = new Location()

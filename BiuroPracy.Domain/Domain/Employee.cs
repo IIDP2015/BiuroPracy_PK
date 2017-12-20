@@ -15,7 +15,7 @@ namespace BiuroPracy.Domain
         public virtual string Surname { get; set; }
         public virtual DateTime? DateOfBirth { get; set; }
         public virtual Contract Contract { get; set; }
-        public virtual Profession Profession { get; set; }
+        public virtual Proffesion Proffesion { get; set; }
         public virtual Location Location { get; set; }
     }
 }
