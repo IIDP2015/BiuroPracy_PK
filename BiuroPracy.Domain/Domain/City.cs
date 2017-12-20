@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BiuroPracy.Domain
 {
-    public class Contract
+    public class City
     {
         public virtual int Id { get; set; }
-        public virtual string Name { get; set; }
+        public virtual string CityName { get; set; }
     }
 }

@@ -40,9 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\City.cs" />
     <Compile Include="Domain\Contract.cs" />
+    <Compile Include="Domain\Country.cs" />
     <Compile Include="Domain\Employee.cs" />
-    <Compile Include="Domain\Proffesion.cs" />
+    <Compile Include="Domain\Location.cs" />
+    <Compile Include="Domain\Profession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
