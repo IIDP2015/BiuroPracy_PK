@@ -1,5 +1,6 @@
 ﻿using BiuroPracy.BusinessLogic;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,8 @@ using BiuroPracy.BusinessLogic.API.Interface;
 using NHibernate;
 using BiuroPracy.BusinessLogic.NHibernate;
 using BiuroPracy.Domain;
+using NHibernate.Linq;
+using NHibernate.Transform;
 
 namespace BiuroPracy.BusinessLogic.API.Interface
 {
@@ -27,8 +30,8 @@ namespace BiuroPracy.BusinessLogic.API.Interface
                             var proffesion = session.Get<Proffesion>(1);
 
                             //                            var id = AddEmployee(session);
-                            UpdateEmployee(session);
-                            //GetEmployee(session);
+//                            UpdateEmployee(session);
+                            GetEmployee(session, 19);
                             transaction.Commit();
                         }
                         catch (Exception e)
@@ -92,6 +95,22 @@ namespace BiuroPracy.BusinessLogic.API.Interface
             };
             
             session.Update(employee);
+        }
+
+        private void GetEmployee(ISession session, int id)
+        {
+            var employee = session.Get<Employee>(id);
+
+            var employee1 = session.Query<Employee>()
+                .Where(x => x.Name == "Arnold" && x.Location != null
+                            && x.Location.City.Name == "Poznań")
+                .Select(x => new {Name = x.Surname}).ToList();
+
+            var employee2 = session.CreateSQLQuery(@"SELECT Id, Name, Surname" + 
+                " FROM Employee WHERE Name = :name")
+                .SetParameter("name", "Arnold")
+                .SetResultTransformer(Transformers.AliasToEntityMap)
+                .List<IDictionary>();
         }
     }
 }
