@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AddEmployeeControl.ascx.cs" Inherits="BiuroPracy.AddEmployeeControl" %>
+﻿d<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AddEmployeeControl.ascx.cs" Inherits="BiuroPracy.AddEmployeeControl" %>
 <div class="form-group">
     <label class ="control-label col-sm-2">Email:</label>
     <div class="col-sm-10">
